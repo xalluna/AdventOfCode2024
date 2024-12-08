@@ -4,6 +4,8 @@ var parser = new ReportParsingStrategy("input.txt");
 
 var reports = parser.Parse();
 
-var partOne = new PartOneStrategy(reports);
+reports.ForEach(x => x.SetStrategy(new DayOneReportStrategy()));
+Console.WriteLine(reports.Count(x => x.IsSafe));
 
-Console.WriteLine(partOne.Execute());
+reports.ForEach(x => x.SetStrategy(new DayTwoReportStrategy()));
+Console.WriteLine(reports.Count(x => x.IsSafe));

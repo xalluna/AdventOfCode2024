@@ -34,11 +34,3 @@ public partial class ReportParsingStrategy(string filename): AbstractParsingStra
         return reports;
     }
 }
-
-public class PartOneStrategy(List<Report> reports)
-{
-    public int Execute()
-    {
-        return reports.Count(x => x.IsSafe);
-    }
-}
